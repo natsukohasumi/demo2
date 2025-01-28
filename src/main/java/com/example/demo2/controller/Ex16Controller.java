@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.demo2.form.User;
+import com.example.demo2.domain.User2;
 
 import jakarta.servlet.ServletContext;
 
@@ -20,7 +20,7 @@ public class Ex16Controller {
 
     @RequestMapping("")
     public String index(){
-        List<User> allPosts = (List<User>) application.getAttribute("posts");
+        List<User2> allPosts = (List<User2>) application.getAttribute("posts");
         if (allPosts == null) {
             allPosts = new ArrayList<>();
             application.setAttribute("posts", allPosts);
@@ -34,15 +34,13 @@ public class Ex16Controller {
 
     @RequestMapping("/post")
     public String post(String name, String remarks){
-        User user = new User();
+        User2 user = new User2();
         user.setName(name);
         user.setRemarks(remarks);
 
-    List<User> allPosts = (List<User>) application.getAttribute("posts");
+    List<User2> allPosts = (List<User2>) application.getAttribute("posts");
 
         allPosts.add(user);
-
-        application.setAttribute("posts", allPosts);  
         
 
         return "ex-16";

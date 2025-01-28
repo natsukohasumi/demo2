@@ -14,9 +14,10 @@
     <button>投稿！</button>
     
     <hr>
-    <span th:each="allPost : ${allPosts}">
-        <span th:text="${item.name}"さんの発言></span><br>
-        <span th:text="${item.remarks}"></span><br>
+    <span th:each="user : ${application.posts}">
+        <span th:text="${user.name}"></span>さんの発言<br>
+        <span th:text="${user.remarks}"></span><br>
+        <hr>
     </span>
     </form>
     

@@ -1,14 +1,14 @@
-package com.example.demo2.form;
+package com.example.demo2.domain;
 
-public class User {
+public class User2 {
     private String name;
     private String remarks;
 
     
-    public User() {
+    public User2() {
     }
 
-    public User(String name, String remarks) {
+    public User2(String name, String remarks) {
         this.name = name;
         this.remarks = remarks;
     }
